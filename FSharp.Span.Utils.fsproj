@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard1.6;net46</TargetFrameworks>
+    <Description>Makes Span/ReadOnlySpan easy to use from F#.</Description>
+    <Authors>cannorin</Authors>
+    <Product />
+    <Copyright>(c) cannorin 2019</Copyright>
+    <PackageProjectUrl>https://github.com/cannorin/FSharp.Span.Utils</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageTags>fsharp span memory</PackageTags>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Version.g.fs" />
+    <Compile Include="SpanUtils.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="4.5.2" />
+    <PackageReference Include="System.Memory" Version="4.5.2" />
+  </ItemGroup>
+
+</Project>
