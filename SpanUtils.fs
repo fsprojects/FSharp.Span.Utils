@@ -43,7 +43,7 @@ module SafeLowLevelOperators =
 
 module Span =
   let inline ofArray (xs: _[]) = span(xs)
-  let inline ofPtr (p: 'a nativeptr, size) =
+  let inline ofPtr (p: 'a nativeptr) size =
     span<'a>(p |> NativePtr.toVoidPtr, size)
   let inline ofMemory (mem: _ memory) : _ span = mem.Span
   let inline toArray (s: _ span) = s.ToArray()
@@ -79,7 +79,7 @@ module Span =
 
 module ReadOnlySpan =
   let inline ofArray (xs: _[]) = readonlyspan(xs)
-  let inline ofPtr (p: 'a nativeptr, size) =
+  let inline ofPtr (p: 'a nativeptr) size =
     readonlyspan<'a>(p |> NativePtr.toVoidPtr, size)
   let inline ofMemory (mem: _ readonlymemory) : _ readonlyspan = mem.Span
   let inline ofString (s: string) : _ readonlyspan = s.AsSpan()
